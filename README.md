@@ -81,7 +81,7 @@ response records, DTCs and error conditions. In particular,
 sub-function plus four timing bytes. `response-parse` stores that echoed
 sub-function separately; use the exact combination shown above.
 
-A [standalone verified quickstart](examples/quickstart.rkt) exercises
+A [standalone verified quickstart](uds/examples/quickstart.rkt) exercises
 synthetic session requests, VIN DID requests, positive/negative response
 parsing, timing units and DTCs; no CAN adapter, ECU or network is required.
 
@@ -90,7 +90,7 @@ From a local repository checkout (Racket installed):
 ```sh
 raco pkg install --auto --link "$(pwd)"
 raco test -p uds
-racket examples/quickstart.rkt
+racket uds/examples/quickstart.rkt
 raco setup --check-pkg-deps -l uds
 ```
 
