@@ -6,11 +6,11 @@ on:
   pull_request:
     branches: [main]
 
-# Cancel only superseded runs for the same PR or branch.
-# Preserve Linux, Windows, macOS, quickstart and Scribble checks.
+# Preserve every main commit's Windows/macOS/Linux quality evidence.
+# Cancel only superseded PR checks, never queued or running main pushes.
 concurrency:
-  group: ci-${{ github.workflow }}-${{ github.event_name }}-${{ github.event.pull_request.number || github.ref }}
-  cancel-in-progress: true
+  group: ci-${{ github.workflow }}-${{ github.event_name }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   test:
