@@ -6,7 +6,7 @@
                      racket/contract))
 
 @title{uds: ISO 14229 (Unified Diagnostic Services) in pure Racket}
-@author{@(author+email "turinglambdaai" "turinglambdaai@users.noreply.github.com")}
+@author{@(author+email "turlamai" "turlamai@users.noreply.github.com")}
 
 @defmodule[uds]
 
