@@ -66,7 +66,7 @@ DTC 及错误条件。`session-control-response` 需要**五字节记录**：
 一字节回显的会话子功能加四字节 P2/P2* 时间参数。
 `response-parse` 会把子功能字节分开存放，调用时必须按上面的代码组合。
 
-[可执行入门示例](examples/quickstart.rkt)使用合成数据验证会话请求、
+[可执行入门示例](uds/examples/quickstart.rkt)使用合成数据验证会话请求、
 VIN DID、肯定/否定响应、时间单位和 DTC；不需要 CAN 适配器、ECU 或网络。
 
 在已安装 Racket 的仓库根目录执行：
@@ -74,7 +74,7 @@ VIN DID、肯定/否定响应、时间单位和 DTC；不需要 CAN 适配器、
 ```sh
 raco pkg install --auto --link "$(pwd)"
 raco test -p uds
-racket examples/quickstart.rkt
+racket uds/examples/quickstart.rkt
 raco setup --check-pkg-deps -l uds
 ```
 
